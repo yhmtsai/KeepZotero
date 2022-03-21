@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://zotero-platform/content/preferences.css"?>
+<?xml-stylesheet href="chrome://zotero-platform-version/content/style.css"?>
+
+<!DOCTYPE window SYSTEM "chrome://keepzotero/locale/options.dtd">
+
+<!-- For those &keepzotero items, they are given the sentence in the locale options.dtd -->
+<prefwindow id="keepzotero-perf" title="&keepzotero-preferences;" 
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    ondialogaccept="syncStatus();">
+    <prefpane label="&keepzotero-prefpane;" id="keepzotero-perfpane">
+        <!-- Use name to set default in default.js -->
+        <!-- id is for the later usage to point which variable for the item -->
+        <preferences>
+            <preference id="pref-keepzotero-cb_disable_close" name="extensions.keepzotero.cb_disable_close" type="bool"/>
+			<preference id="pref-keepzotero-cb_disable_zotero_close" name="extensions.keepzotero.cb_disable_zotero_close" type="bool"/>
+            <preference id="pref-keepzotero-cb_check_exit" name="extensions.keepzotero.cb_check_exit" type="bool"/>
+        </preferences>
+        <!-- the preference uses the previous defined id -->
+        <checkbox id="id-keepzotero-cb_disable_close" label="&keepzotero-cb_disable_close;" preference="pref-keepzotero-cb_disable_close"/>
+        <checkbox id="id-keepzotero-cb_disable_zotero_close" label="&keepzotero-cb_disable_zotero_close;" preference="pref-keepzotero-cb_disable_zotero_close"/>
+        <label value="&keepzotero-disable_zotero_close_note;"/>
+        <checkbox id="id-keepzotero-cb_check_exit" label="&keepzotero-cb_check_exit;" preference="pref-keepzotero-cb_check_exit"/>
+    </prefpane>
+    
+    
+    <script src="options.js"/>
+    <script src="chrome://zotero/content/include.js"/>
+    <script src="chrome://keepzotero/content/include.js"/>
+</prefwindow>

@@ -1,0 +1,7 @@
+
+<!ENTITY keepzotero-preferences                 "KeepZotero Preferences">
+<!ENTITY keepzotero-prefpane                    "KeepZotero Preferences">
+<!ENTITY keepzotero-cb_disable_close            "When window is not minialized, normal close way lead minialization">
+<!ENTITY keepzotero-cb_disable_zotero_close     "Disable the zotero main panel close shortcut Ctrl or Command + W.">
+<!ENTITY keepzotero-disable_zotero_close_note   "Note. the shortcut out of main panel and File/Close keep the original behavior.">
+<!ENTITY keepzotero-cb_check_exit               "Give a confirmation dialog to avoid Exit">
