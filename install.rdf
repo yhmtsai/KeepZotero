@@ -9,6 +9,7 @@
         <em:type>2</em:type>
         <em:multiprocessCompatible>true</em:multiprocessCompatible>
         <em:optionsURL>chrome://keepzotero/content/options.xul</em:optionsURL>
+        <em:updateURL>https://raw.githubusercontent.com/yhmtsai/KeepZotero/master/keepzotero-update.rdf</em:updateURL>
         <em:creator>Yu-Hsiang Mike Tsai</em:creator>
 
         <em:targetApplication>
