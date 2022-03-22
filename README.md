@@ -19,6 +19,9 @@ The followings only have effect on Windows or Linux:
 4. (Default: no) Enable the shortcut Alt + F4 to close entire Zotero. Note. Without this option, Alt + F4 minimizes Zotero.
 5. (Default: yes) Enable the shortcut Ctrl + W to close entire Zotero. Note. MacOS Command + Q always closes entire Zotero.
 
+Note. When only enable the third option, the Alt + F4 and clicking close button on titlebar will not have the confirmation dialog.
+However, if also enable the forth option, the Alt + F4 will give the confirmation dialog.
+
 # Different keyboard layout
 If the current shortcut is not your usual shortcut (not the personal shortcut) to close the panel, please create an issue with the shortcut.
 
