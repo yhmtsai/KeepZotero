@@ -1,3 +1,5 @@
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 Zotero.KeepZotero = new function () {
     /**
      * Get preference value in 'extensions.zotfile' branch
@@ -13,9 +15,15 @@ Zotero.KeepZotero = new function () {
      */
     this.openPreferenceWindow = function (paneID, action) {
         var io = { pane: paneID, action: action };
-        window.openDialog('chrome://keepzotero/content/options.xul',
+        // always get the main windows
+        // When using Cmd + W on MacOS, it will close the main window of Zotero but Zotero is still alive.
+        // When reopen Zotero window, the window variable might be for old one not the current window.
+        // It might be related to that we only create this in the first time and do not regenerate it when reopen ZoteroPane
+        // Regetting the window such that it always get the current main window
+        var existingWin = Services.wm.getMostRecentWindow("navigator:browser");
+        existingWin.openDialog('chrome://keepzotero/content/options.xul',
             'keepzotero-options',
-            'chrome,titlebar,toolbar,centerscreen,' +
+            'chrome,titlebar,centerscreen,' +
                 Zotero.Prefs.get('browser.preferences.instantApply', true) ? 'dialog=no' : 'modal',
             io);
     };

@@ -6,9 +6,10 @@
 <!DOCTYPE window SYSTEM "chrome://keepzotero/locale/options.dtd">
 
 <!-- For those &keepzotero items, they are given the sentence in the locale options.dtd -->
+<!-- use onunload not ondialogaccept because I do not find the way to show accept button in MacOS-->
 <prefwindow id="keepzotero-perf" title="&keepzotero-preferences;" 
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-    ondialogaccept="syncStatus();">
+    onunload="syncStatus();">
     <prefpane label="&keepzotero-prefpane;" id="keepzotero-perfpane">
         <!-- Use name to set default in default.js -->
         <!-- id is for the later usage to point which variable for the item -->

@@ -3,6 +3,7 @@ if (!Zotero.KeepZotero) {
         .getService(Components.interfaces.mozIJSSubScriptLoader);
     loader.loadSubScript("chrome://keepzotero/content/keepzotero.js");
 }
+// Need to put the following out of the first part to re-addEvent when MacOS redraw ZoteroPane
 // only add event listener when the window contain ZoteroPane
 if (window.ZoteroPane) {
     window.addEventListener("close", Zotero.KeepZotero.closeListener, false);
