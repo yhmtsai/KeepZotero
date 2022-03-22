@@ -1,7 +1,10 @@
-
 <!ENTITY keepzotero-preferences                 "KeepZotero Preferences">
 <!ENTITY keepzotero-prefpane                    "KeepZotero Preferences">
 <!ENTITY keepzotero-cb_disable_close            "When window is not minialized, normal close way lead minialization">
 <!ENTITY keepzotero-cb_disable_zotero_close     "Disable the zotero main panel close shortcut Ctrl or Command + W.">
 <!ENTITY keepzotero-disable_zotero_close_note   "Note. the shortcut out of main panel and File/Close keep the original behavior.">
 <!ENTITY keepzotero-cb_check_exit               "Give a confirmation dialog to avoid Exit">
+<!ENTITY keepzotero-gb_win_linux_only           "This section settings only have effect on Windows/Linux">
+<!ENTITY keepzotero-cb_enable_alt_f4            "Enable Alt + F4 shortcut to terminate Zotero">
+<!ENTITY keepzotero-cb_enable_ctrl_q            "Enable Ctrl + Q shortcut to terminate Zotero.">
+<!ENTITY keepzotero-macos_cmd_q_note            "Note. MacOS Cmd + Q always terminates Zotero">

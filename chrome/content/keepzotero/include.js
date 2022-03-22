@@ -12,7 +12,6 @@ if (window.ZoteroPane) {
     // https://developer.chrome.com/blog/page-lifecycle-api/#the-beforeunload-event
     // beforeunload will give a confirm dialog when using zotero's toolbar/
     if (Zotero.KeepZotero.getPref('cb_check_exit')) {
-        console.log('Start need to add check exit')
         window.addEventListener("beforeunload", Zotero.KeepZotero.checkExitListener);
     }
     // try visiblitychange but zotero Close/Exit seem not to change the visibiltyState

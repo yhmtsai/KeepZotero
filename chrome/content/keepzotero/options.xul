@@ -16,12 +16,20 @@
             <preference id="pref-keepzotero-cb_disable_close" name="extensions.keepzotero.cb_disable_close" type="bool"/>
 			<preference id="pref-keepzotero-cb_disable_zotero_close" name="extensions.keepzotero.cb_disable_zotero_close" type="bool"/>
             <preference id="pref-keepzotero-cb_check_exit" name="extensions.keepzotero.cb_check_exit" type="bool"/>
+            <preference id="pref-keepzotero-cb_enable_alt_f4" name="extensions.keepzotero.cb_enable_alt_f4" type="bool"/>
+            <preference id="pref-keepzotero-cb_enable_ctrl_q" name="extensions.keepzotero.cb_enable_ctrl_q" type="bool"/>
         </preferences>
         <!-- the preference uses the previous defined id -->
         <checkbox id="id-keepzotero-cb_disable_close" label="&keepzotero-cb_disable_close;" preference="pref-keepzotero-cb_disable_close"/>
         <checkbox id="id-keepzotero-cb_disable_zotero_close" label="&keepzotero-cb_disable_zotero_close;" preference="pref-keepzotero-cb_disable_zotero_close"/>
         <label value="&keepzotero-disable_zotero_close_note;"/>
         <checkbox id="id-keepzotero-cb_check_exit" label="&keepzotero-cb_check_exit;" preference="pref-keepzotero-cb_check_exit"/>
+        <groupbox>
+            <caption label="&keepzotero-gb_win_linux_only;"/>
+            <checkbox id="id-keepzotero-cb_enable_alt_f4" label="&keepzotero-cb_enable_alt_f4;" preference="pref-keepzotero-cb_enable_alt_f4"/>
+            <checkbox id="id-keepzotero-cb_enable_ctrl_q" label="&keepzotero-cb_enable_ctrl_q;" preference="pref-keepzotero-cb_enable_ctrl_q"/>
+            <label value="&keepzotero-macos_cmd_q_note;"/>
+        </groupbox>
     </prefpane>
     
     

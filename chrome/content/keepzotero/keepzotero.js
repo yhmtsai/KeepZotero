@@ -15,8 +15,9 @@ Zotero.KeepZotero = new function () {
         var io = { pane: paneID, action: action };
         window.openDialog('chrome://keepzotero/content/options.xul',
             'keepzotero-options',
-            'chrome,titlebar,toolbar,centerscreen' + Zotero.Prefs.get('browser.preferences.instantApply', true) ? 'dialog=no' : 'modal', io
-        );
+            'chrome,titlebar,toolbar,centerscreen,' +
+                Zotero.Prefs.get('browser.preferences.instantApply', true) ? 'dialog=no' : 'modal',
+            io);
     };
 
     /**
@@ -33,18 +34,6 @@ Zotero.KeepZotero = new function () {
     }.bind(this)
 
     /**
-     * It can not stop the File/Close action
-     */
-    this.clickCloseListener = function (event) {
-        console.log('click ' + event.target.id)
-        if (this.getPref("cb_disable_zotero_close") && event.target.id == "menu_close") {
-            console.log('capture');
-            event.preventDefault();
-            event.stopPropagation();
-        }
-    }.bind(this)
-
-    /**
      * make the ctrl/cmd + w minimize the window
      */
     this.keydownListener = function (event) {
@@ -53,6 +42,19 @@ Zotero.KeepZotero = new function () {
             : (event.ctrlKey && !event.shiftKey && !event.altKey);
         if (this.getPref('cb_disable_zotero_close') && cmdOrCtrlOnly && event.key.toLowerCase() == 'w') {
             event.currentTarget.minimize();
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        // Only shortcut for not mac
+        if (Zotero.isMac) {
+            return;
+        }
+
+        const altOnly = !event.shiftKey && !event.ctrlKey && event.altKey;
+        if (this.getPref('cb_enable_alt_f4') && altOnly && event.key == 'F4' ||
+            this.getPref('cb_enable_ctrl_q') && cmdOrCtrlOnly && event.key.toLowerCase() == 'q') {
+            goQuitApplication();
+            // If the confirmation deny the exit, keep the original window
             event.preventDefault();
             event.stopPropagation();
         }
