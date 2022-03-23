@@ -14,7 +14,7 @@ This will change the normal close way - the closs button of the window, alt + F4
 When Zotero is minimized, close from taskbar terminates Zotero.
 2. (Default: yes) Make shortcut Ctrl/Command + W to be minimization
 Note. this shortcut still works on pdf reader or other place out of the main panel. Clicking File/Close or File/Exit still close the Zotero.
-3. (Default: no) Give a confirmation dialog to avoid Exit. If it is selected, user need to confirm exit to close Zotero.
+3. (Default: no) Give a confirmation dialog to avoid Exit. If it is selected, user need to confirm exit to close Zotero. (Unstable, especially MacOS)
 The followings only have effect on Windows or Linux:
 4. (Default: no) Enable the shortcut Alt + F4 to close entire Zotero. Note. Without this option, Alt + F4 minimizes Zotero.
 5. (Default: yes) Enable the shortcut Ctrl + W to close entire Zotero. Note. MacOS Command + Q always closes entire Zotero.
