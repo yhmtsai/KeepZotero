@@ -1,6 +1,14 @@
 # KeepZotero
 KeepZotero is a zotero plugin to keep zotero in taskbar by changing close to minimize or disabling shortcut
 
+# Demo (default setting)
+- Ctrl+W, close button, and Alt+F4 lead minimization
+![close leads minimization](images/keepzotero.gif)
+- Ctrl+Q closes Zotero
+![Ctrl+Q closes zotero](images/close_ctrlq.gif)
+- close Zotero when it is minimization
+![close zotero when minimization](images/close_minimization.gif)
+
 # Installation
 1. Download the *.xpi from Release
 2. Start Zotero: Tools -> Add-ons
