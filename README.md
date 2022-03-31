@@ -25,7 +25,7 @@ Note. this shortcut still works on pdf reader or other place out of the main pan
 3. (Default: no) Give a confirmation dialog to avoid Exit. If it is selected, user need to confirm exit to close Zotero. (Unstable, especially MacOS)
 The followings only have effect on Windows or Linux:
 4. (Default: no) Enable the shortcut Alt + F4 to close entire Zotero. Note. Without this option, Alt + F4 minimizes Zotero.
-5. (Default: yes) Enable the shortcut Ctrl + W to close entire Zotero. Note. MacOS Command + Q always closes entire Zotero.
+5. (Default: yes) Enable the shortcut Ctrl + Q to close entire Zotero. Note. MacOS Command + Q always closes entire Zotero.
 
 Note. When only enable the third option, the Alt + F4 and clicking close button on titlebar will not have the confirmation dialog.
 However, if also enable the forth option, the Alt + F4 will give the confirmation dialog.
@@ -44,4 +44,5 @@ Although I have some coding experience with different language, I do not learn J
 - I can only use 2 not `Components.interfaces.nsIDOMChromeWindow.STATE_MINIMIZED` for checking `windowState` in `closeListener`. The later one is shown undefined.
 - I do not find or try the proper way such that MacOS also shows KeepZotero's preferences with buttons, so I put the sync function into unload.
 - MacOS may redraw the window (Command + W close and then reopen it from taskbar). I do not regenerate the KeepZotero. KeepZotero's `openPreferenceWindow` may still use the old window not the new one such that opening preference throws `NS_ERROR_NOT_AVAILABLE` error.  
-Currently, I always get the current main window to avoid this question. Of course, if select the second option to make Command + W to be minimization, it somehow avoid this kind of issue.
+Currently, I always get the current main window to avoid this question. Of course, if select the second option to make Command + W to be minimization, it somehow avoid this kind of issue.  
+It's proved in https://forums.zotero.org/discussion/87562/bug-i-cant-open-some-extension-for-running-zotero-a-long-time. Thus, need to get the current window to open dialog in MacOS.
