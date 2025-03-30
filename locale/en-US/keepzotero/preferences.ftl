@@ -1,0 +1,12 @@
+keepzotero-preferences = KeepZotero Preferences
+keepzotero-cb_check_exit = 
+    .label = Give a confirmation dialog when closing Zotero. When Alt + F4 gives close, it will not trigger confirmation dialog.
+keepzotero-note = Note. This plugin does not change behavior of the close button or close from the menu.
+keepzotero-cb_enable_ctrl_w = 
+    .label = Change Ctrl/Command + W shortcut to to minimize
+keepzotero-gb_win_linux_only = The followings only have effect on Windows/Linux
+keepzotero-cb_enable_alt_f4 = 
+    .label = Change Alt + F4 shortcut to minimize Zotero
+keepzotero-cb_enable_ctrl_q = 
+    .label = Change Ctrl + Q shortcut to minimize Zotero.
+keepzotero-macos_cmd_q_note = Note. MacOS Command + Q always terminates Zotero

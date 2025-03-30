@@ -1,0 +1,18 @@
+<linkset>
+  <html:link rel="localization" href="keepzotero/preferences.ftl" />
+</linkset>
+
+<vbox onload="KeepZotero_Preferences.init()">
+	<groupbox>
+    <label><html:h2 data-l10n-id="keepzotero-preferences"></html:h2></label>
+    <description data-l10n-id="keepzotero-note"></description>
+    <checkbox id="id-keepzotero-cb_check_exit" data-l10n-id="keepzotero-cb_check_exit" preference="extensions.keepzotero.cb_check_exit"/>
+    <checkbox id="id-keepzotero-cb_enable_ctrl_w" data-l10n-id="keepzotero-cb_enable_ctrl_w" preference="extensions.keepzotero.cb_enable_ctrl_w"/>
+    <groupbox> 
+      <caption data-l10n-id="keepzotero-gb_win_linux_only"/>
+      <checkbox id="id-keepzotero-cb_enable_alt_f4" data-l10n-id="keepzotero-cb_enable_alt_f4" preference="extensions.keepzotero.cb_enable_alt_f4"/>
+      <checkbox id="id-keepzotero-cb_enable_ctrl_q" data-l10n-id="keepzotero-cb_enable_ctrl_q" preference="extensions.keepzotero.cb_enable_ctrl_q"/>
+      <label data-l10n-id="keepzotero-macos_cmd_q_note"/>
+    </groupbox>
+	</groupbox>
+</vbox>

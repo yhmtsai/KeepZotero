@@ -1,5 +1,0 @@
-content	keepzotero				chrome/content/keepzotero/
-locale	keepzotero	en-US		chrome/locale/en-US/keepzotero/
-skin	keepzotero	default		chrome/skin/default/keepzotero/
-
-overlay	chrome://zotero/content/zoteroPane.xul	chrome://keepzotero/content/overlay.xul
