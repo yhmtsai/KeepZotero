@@ -3,7 +3,6 @@ KeepZotero = {
     version: null,
     rootURI: null,
     initialized: false,
-    addedElementIDs: [],
 
     init({ id, version, rootURI }) {
         if (this.initialized) return;
@@ -23,6 +22,15 @@ KeepZotero = {
             window.addEventListener("keydown", KeepZotero.Listener.keydownListener);
             this.log("install beforeunload event")
             window.addEventListener("beforeunload", KeepZotero.Listener.checkExitListener);
+
+            const closeButton = window.document.querySelector(".titlebar-button.titlebar-close");
+            // Ensure we can find the closeButton in Zotero 7
+            if (closeButton) {
+                this.log("install click event");
+                closeButton.addEventListener("click", KeepZotero.Listener.closeButtonListener, true);
+            } else {
+                this.log("can not find the closeButton, so this plugin can not add the close button event.");
+            }
         }
     },
 
@@ -40,6 +48,14 @@ KeepZotero = {
             window.removeEventListener("keydown", KeepZotero.Listener.keydownListener);
             this.log("remove beforeunload event")
             window.removeEventListener("beforeunload", KeepZotero.Listener.checkExitListener);
+            const closeButton = window.document.querySelector(".titlebar-button.titlebar-close");
+            // Ensure we can find the closeButton in Zotero 7
+            if (closeButton) {
+                this.log("remove click event");
+                closeButton.removeEventListener("click", KeepZotero.Listener.closeButtonListener);
+            } else {
+                this.log("can not find the closeButton, so this plugin can not add the close button event.");
+            }
         }
     },
 
@@ -67,7 +83,7 @@ KeepZotero.Listener = new function () {
         return Zotero.Prefs.get('extensions.keepzotero.' + pref, true);
     };
 
-    this.log = function(text) {
+    this.log = function (text) {
         Zotero.debug("KeepZotero Listener: " + text);
     }
 
@@ -104,10 +120,24 @@ KeepZotero.Listener = new function () {
      * give confirmation dialog when user close Zotero
      */
     this.checkExitListener = function (event) {
-        this.log("give confirmation when exit: " + this.getPref('cb_enable_ctrl_q'));
+        this.log("give confirmation when exit: " + this.getPref('cb_check_exit'));
         if (this.getPref('cb_check_exit')) {
             event.preventDefault();
             event.returnValue = true;
+        }
+    }.bind(this)
+
+    /**
+     * when user click the close button, minmize the window
+     */
+    this.closeButtonListener = function (event) {
+        this.log("Minimize when click the close button: " + this.getPref('cb_minimize_on_button'));
+        // We only change the click button behavior, so we do not need to detect the window state.
+        if (this.getPref('cb_minimize_on_button')) {
+            event.preventDefault();
+            event.stopPropagation();
+            // event.currentTarget is button not the window.
+            event.currentTarget.ownerDocument.defaultView.minimize();
         }
     }.bind(this)
 };

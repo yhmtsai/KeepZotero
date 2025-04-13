@@ -1,5 +1,5 @@
 # KeepZotero (Zotero 7)
-KeepZotero is a zotero plugin to keep zotero in taskbar by changing remap the key to minimize or give a confirmation dialog before close.  
+KeepZotero is a zotero plugin to keep zotero in taskbar by remapping the key or changing the button behavior to minimize or give a confirmation dialog before close.  
 The master branch and version 0.1.0 starts to support Zotero 7.  
 For the user from Zotero 6. Please check [Changes from Zotero 6 to Zotero 7](#changes-from-zotero-6-to-zotero-7)
 
@@ -14,18 +14,19 @@ If you still want to use KeepZotero in Zotero 6, please check [tag v0.0.2](https
 4. choose the xpi file
 
 # Changes from Zotero 6 to Zotero 7
-This plugin does not change the behavior of close button anymore.  
-This plugin can remap the common exit key (`Ctrl/Command + W`, `Ctrl+ Q`, `Alt + F4`) to just minimize Zotero
+- This plugin can remap the common exit key (`Ctrl/Command + W`, `Ctrl+ Q`, `Alt + F4`) to just minimize Zotero.
+- This new plugin (v0.2.0) can change the close button behavior to minmize the accident of closing Zotero.
 
 # Usage
 There are some options to decide KeepZotero's behavior
 When Zotero is minimized, close from taskbar terminates Zotero.
-1. (Default: Yes) Give a confirmation dialog when closing Zotero. If it is selected, user need to confirm exit to close Zotero. If Alt + F4 still performs `close`, it will not trigger the confirmation dialog. (Unstable, especially MacOS)
-2. (Default: yes) Make shortcut Ctrl/Command + W to be minimization
+1. (Default: Yes) Change the close button of the title bar to minimize the window.
+2. (Default: Yes) Give a confirmation dialog when closing Zotero. If it is selected, user need to confirm exit to close Zotero. If Alt + F4 still performs `close`, it will not trigger the confirmation dialog. (Unstable, especially MacOS)
+3. (Default: yes) Make shortcut Ctrl/Command + W to be minimization
 Note. this shortcut still works on pdf reader or other place out of the main panel.
 The followings only have effect on Windows or Linux:
-3. (Default: yes) Make shortcut Alt + F4 to be minimization
-4. (Default: yes) Make shortcut Ctrl + Q to be minimization Note. MacOS Command + Q always closes entire Zotero.
+4. (Default: yes) Make shortcut Alt + F4 to be minimization
+5. (Default: yes) Make shortcut Ctrl + Q to be minimization Note. MacOS Command + Q always closes entire Zotero.
 
 # Different keyboard layout
 If the current shortcut is not your usual shortcut (not the personal shortcut) to close the panel, please create an issue with the shortcut.
@@ -36,4 +37,4 @@ If the current shortcut is not your usual shortcut (not the personal shortcut) t
 
 # My Limitation and Questions
 Although I have some coding experience with different language, I do not learn JavaScript or Chrome Extension(?). Thus, the code may do some stupid things... When developing this plugin, I do not find the proper documentation to explain my questions, which I write them in the code. I will appreciate if someone notice any issue inside the code or have some answer to my questions.
-- I do not find a way to detect the close button. The close event I used in KeepZotero for Zotero 6 does not work in Zotero 7.
+- I do not find a way to detect the close event, which I used in KeepZotero for Zotero 6 does not work in Zotero 7. Currently, I add a event to the close button of title bar to change the behavior. It only changes the close button, so close functionality from the taskbar is not changed. 
