@@ -3,9 +3,9 @@
     "keepzotero@yhmtsai": {
       "updates": [
         {
-          "version": "0.1.0",
-          "update_link": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.1.0/keepzotero-0.1.0-fx.xpi",
-          "update_hash": "sha256:c49732fc60c051014a0fd5aeb943224401343a42200801d2156defc0753423c2",
+          "version": "0.2.0",
+          "update_link": "https://github.com/yhmtsai/KeepZotero/releases/download/v0.2.0/keepzotero-0.2.0-fx.xpi",
+          "update_hash": "sha256:2b2341b122bbacb115e72ecd38aedaf89e5e0691490c187995ffea5c73ff799c",
           "applications": {
             "zotero": {
               "strict_min_version": "6.999"
